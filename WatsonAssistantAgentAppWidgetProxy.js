@@ -12,7 +12,7 @@
  *
  */
 
-const GENESYS_CLIENT_ID = '<GENESYS_OAUTH_CLIENT_ID>';
+const GENESYS_CLIENT_ID = '7b9cecc9-067c-4bb4-97a0-8aed5ce6f78b';
 
 const redirectUri = `${window.location.protocol}//${window.location.hostname}${window.location.pathname}`;
 
