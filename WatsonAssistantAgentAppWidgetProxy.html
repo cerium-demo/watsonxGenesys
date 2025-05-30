@@ -15,7 +15,29 @@
     <head>
         <meta charset="utf-8" />
         <title>Interaction Widget</title>
+<script>
+  window.watsonAssistantChatOptions = {
+    integrationID: '26ae7486-4aab-494b-8a84-122c009474c7',
+    region: 'us-south',
+    serviceInstanceID: 'b394cdbf-2703-41cc-89de-e2c12cc6f9fc',
 
+    serviceDesk: {
+      // This enables the Genesys integration.
+      integrationType: 'genesyswebmessenger',
+      genesysMessenger: {
+        scriptURL: 'https://apps.mypurecloud.com/genesys-bootstrap/genesys.min.js',
+        deploymentID: '608e4c42-69cc-44f1-b22f-7ce977128671',
+        environment: 'prod-usw2',  // Only if provided.
+      },
+    },
+
+    onLoad: async (instance) => {
+      await instance.render();
+    }
+  };
+  
+  setTimeout(function(){const t=document.createElement('script');t.src='https://web-chat.global.assistant.watson.appdomain.cloud/versions/' + (window.watsonAssistantChatOptions.clientVersion || 'latest') + '/WatsonAssistantChatEntry.js';document.head.appendChild(t);});
+</script>
 		<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
         <script src="//sdk-cdn.mypurecloud.com/client-apps/1.3.0/purecloud-client-app-sdk.js"></script>
         <script src="//sdk-cdn.mypurecloud.com/javascript/latest/purecloud-platform-client-v2.min.js"></script>
